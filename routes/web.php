@@ -3,6 +3,7 @@
 use App\Mail\PostUpdatedAdminMessage;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 use App\Models\Post;
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,18 @@ use App\Models\Post;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
+*/
+Route::get('contact-form','MessageController@index')->name('contact-form.index');
+Route::post('contact-form','MessageController@store');
+/*
+-controlle per la richiesta ()
+-modello per messaggio
+-table messages
+-mailable admin
+-mailable per user
+- limit access to panell messaggi solo al primo utente del sito(supa admin)
+
+
 */
 
 
@@ -29,6 +42,8 @@ Route::middleware('auth')->prefix('admin')->namespace('Admin')->name('admin.')->
     Route::resource('categories','CategoryController')->parameters(['categories' => 'category:slug'])->except(['show', 'create','edit']);
 
     Route::resource('tags','TagController')->parameters(['tags' => 'tag:slug'])->except(['show', 'create','edit']);
+
+    Route::resource('messages','MessageController');
 });
 
 

@@ -38,7 +38,10 @@
 
   <!-- route outlet -->
   <!-- component matched by the route will render here -->
+  <main>
   <router-view></router-view>
+
+  </main>
 
 
   <footer class="bg-dark text-white text-center p-5">
@@ -74,4 +77,9 @@ export default {
 </script>
 
 <style lang="scss">
+main{
+    min-height: 100vh;
+}
+
+
 </style>

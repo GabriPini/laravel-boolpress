@@ -65,6 +65,7 @@
                                 Categories <span class="sr-only {{Route::currentRouteName() !== 'admin.categories.index' ? 'd-none' : '' }}">(current)</span>
                             </a>
                         </li>
+
                         <li class="nav-item">
                             <a class="nav-link{{Route::currentRouteName() === 'admin.tags.index' ? 'active ps-3' : '' }}" href="{{ route('admin.tags.index') }}">
                                 Tags <span class="sr-only {{Route::currentRouteName() !== 'admin.tags.index' ? 'd-none' : '' }}">(current)</span>
@@ -73,6 +74,12 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">
                                 Users
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link{{Route::currentRouteName() === 'admin.messages.index' ? 'active ps-3' : '' }}" href="{{ route('admin.messages.index') }}">
+                                messages <span class="sr-only {{Route::currentRouteName() !== 'admin.messages.index' ? 'd-none' : '' }}">(current)</span>
                             </a>
                         </li>
 
